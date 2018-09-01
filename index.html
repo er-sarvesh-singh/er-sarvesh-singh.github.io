@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Sarvesh | Portfolio</title>
-		
-	<meta charset="utf-8"> 
+
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">		
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-		
+
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 	<!--
 	Font Awesome Icons
@@ -20,16 +20,37 @@
 	Google Icons
 	<i class="material-icons">cloud</i>
 	-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!--
 	Bootstrap Icons
 	<i class="glyphicon glyphicon-"></i>
 	-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<style>
+	* {
+	  box-sizing: border-box;
+	}
+
+	html {
+		height:100%;
+
+	}
+
+	body {
+		max-width: 100%;
+		//width: 100%;
+		height: auto;
+		background-repeat: no-repeat;
+		background-image: url('i6.png');
+		//background-size: cover;
+    //background-size: contain;
+		background-size: 100% 100%;
+		//margin-left: 40px;
+	}
+
 		.row::after {
 			content: "";
 			clear: both;
@@ -50,65 +71,93 @@
 			height: auto;
 			padding-top: 15px;
 		}
+		/*
 		.profile {
 			background-color:rgb(245,245,245);
 			color: #000;
 			width:100%;
 			text-align: center;
 		}
+		*/
 		.profile_img {
 			//border-radius: 50%;
-			width:200px;
-			height: 200px;
+			//margin-top:40px;
+			width:180px;
+			height: 160px;
 		}
 		.profile_text {
 			font-size: 32px;
 			font-weight: bold;
 			padding-top: 15px;
+			color: rgb(245,245,245);
 		}
 		.desc_text {
 			font-size: 24px;
 			font-weight: bold;
 			//padding-top: 15px;
+			color: rgb(0,0,0);
 		}
 		.desc_img {
 			padding-top: 10px;
+			padding-bottom: 10px;
+
 		}
 		.skill_text {
 			font-size: 32px;
 			font-weight: bold;
 			padding-top: 15px;
+			color: rgb(0,0,0);
 		}
 		.skill_img {
 			padding-top: 10px;
+			padding-bottom: 10px;
+			//background-color:rgb(245,245,245);
 		}
-		
+
 		.img-thumbnail {
 			background-color: black;
 		}
+		#myVideo {
+		z-index: -1;
+    position: fixed;
+		//left: 0;
+		//top: 0;
+		right: 0;
+    bottom: 0;
+    min-width: 100%;
+    max-height: 100%;
+}
  	</style>
-	
+
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 	<body>
-		<div class="profile">
-			<div class="container">
+<!--
+ 			<video poster="http://www.bidgely.com/wp-content/uploads/2017/05/EU_Home_Marquee_1440x571.png" autoplay muted loop id="myVideo">
+				<source src="images/video.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+			</video>
+-->
+
+			<div class="container text-center">
 				<div>
-					<img class="profile_img img-responsive img-circle img-thumbnail" src="images/Sarvesh.jpg" alt="Sarvesh"> 
+					<img class="profile_img img-responsive img-circle img-thumbnail" src="images/Sarvesh.jpg" alt="Sarvesh">
 				</div>
 				<div class="profile_text">
 					SARVESH SINGH
 				</div>
 				<div class="desc_text">
-					<a href="https://www.github.com/sarvesh18/" target="_blank" style="color: #000;"><!--Competitive-->Coder</a>
-					&nbsp;| 
-					<a href="https://www.github.com/sarvesh18/Web-App" target="_blank" style="color: #000;">Web Developer</a>
-					&nbsp;| 
-					<a href="https://www.github.com/sarvesh18/Mobile-App" target="_blank" style="color: #000;">Mobile Developer</a>
-					&nbsp;| 
-					<a href="https://www.github.com/sarvesh18/Web-Design" target="_blank" style="color: #000;">Web Designer </a>
-					&nbsp;| 
-					<a href="https://www.github.com/sarvesh18/" target="_blank" style="color: #000;">Freelancer</a> 
+					<a href="https://www.github.com/sarvesh18/" target="_blank" style="color: rgb(0,0,0);"><!--Competitive/Software Developer-->Coder</a>
+					&nbsp;|
+					<a href="https://www.github.com/sarvesh18/Web-App" target="_blank" style="color: rgb(0,0,0);">Web Developer</a>
+					&nbsp;|
+					<a href="https://www.github.com/sarvesh18/Web-App" target="_blank" style="color: rgb(0,0,0);">Software Developer</a>
+					&nbsp;|
+					<a href="https://www.github.com/sarvesh18/Mobile-App" target="_blank" style="color: rgb(0,0,0);">Mobile App Developer</a>
+					&nbsp;|
+					<a href="https://www.github.com/sarvesh18/Web-Design" target="_blank" style="color: rgb(0,0,0);">Web Designer </a>
+					&nbsp;|
+					<a href="https://www.github.com/sarvesh18/" target="_blank" style="color: rgb(0,0,0);">Freelancer</a>
 				</div>
 				<div class="desc_img">
 					<ul class="list-inline">
@@ -142,18 +191,13 @@
 								<img class="image" src="images/LinkedIn_logo.png" alt="LinkedIn">
 							</a>
 						</li>
-                    </ul>
+          </ul>
 				</div>
 				<div class="skill_text">
 					SKILLS
 				</div>
 				<div class="skill_img">
 					<ul class="list-inline">
-						<li>
-							<a href="https://github.com/sarvesh18/technology" target="_blank">
-								<img class="image" src="images/Arduino.png" alt="Arduino">
-							</a>
-						</li>
 						<li>
 							<a href="https://github.com/sarvesh18/technology" target="_blank">
 								<img class="image" src="images/C++.png" alt="C++">
@@ -229,6 +273,11 @@
 								<img class="image" src="images/PHP.png" alt="PHP">
 							</a>
 						</li>
+						<li>
+							<a href="https://github.com/sarvesh18/technology" target="_blank">
+								<img class="image" src="images/Arduino.png" alt="Arduino">
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -239,7 +288,7 @@
 	<!------------------------------------------------------------------------------------------------------------------------------------------------------------>
 	<div class="container text-center">
 		<button class="w3-btn w3-black w3-padding-large w3-margin-top w3-margin-bottom">
-			<a href="https://drive.google.com/open?id=1DSRdqOePbvQIroPV_6g_hl4N2noTAtKC" target="_blank" style="color:#fff;">
+			<a href="https://drive.google.com/open?id=1a43o4uQlQaObx1mssfK7mOMtV1JH-lGm" target="_blank" style="color:#fff;">
 				<i class="fa fa-download w3-margin-right"></i>
 				Download Resume
 			</a>
@@ -249,8 +298,8 @@
 
 	<!------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <!-- 	<div class="text-center w3-panel w3-leftbar w3-sand">
-		<p class="w3-xxlarge">The enemy are only 50 yards from us. We are heavily outnumbered. 
-		We are under devastating fire. 
+		<p class="w3-xxlarge">The enemy are only 50 yards from us. We are heavily outnumbered.
+		We are under devastating fire.
 		I shall not withdraw an inch but will fight to our last man and our last round.</p>
 		<p>Major Somnath Sharma, 4th Battalion,Kumaon Regiment</p>
 	</div>
@@ -280,9 +329,8 @@
 	</div>
 	<!------------------------------------------------------------------------------------------------------------------------------------------------------------>
 	<hr>
-	<!------------------------------------------------------------------------------------------------------------------------------------------------------------>	
-	<footer class="r_footer">
-	<div clas="container">
+	<!------------------------------------------------------------------------------------------------------------------------------------------------------------>
+	<footer class="r_footer container">
 		<span class="skype-button bubble " data-contact-id="live:sarvesh.singh18"></span>
 		<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
 		<div class="w3-center">
@@ -292,8 +340,8 @@
 		</div>
 		<!--
 		<img class="r_footer_img" src="footerfinal.png" alt="footer" title="Contact Us">
-		-->		
-		
+		-->
+
 		<div class="r_footer_info">
 			<div class="r_contact_details">
 				<h4 class="r_heading w3-center"><strong>CONTACT ME</strong><h4><br>
@@ -303,23 +351,23 @@
 					<li><img class="r_contact_icon w3-hover-opacity" src="images/Email.png" alt="Email"><p>sarvesh.singh18@hotmail.com</p></li>
 				</ul>
 			</div>
-				
+
 			<div class="r_social_details">
 				<h4 class="r_heading w3-center"><strong>STAY CONNECTED</strong></h4><br>
-					<a href="https://www.facebook.com/sarvesh.singh2"" target="_blank"> 
-						<img class="r_icon w3-hover-opacity" src="images/Facebook.png" alt="Facebook"> 
+					<a href="https://www.facebook.com/sarvesh.singh2" target="_blank">
+						<img class="r_icon w3-hover-opacity" src="images/Facebook.png" alt="Facebook">
 					</a>
-					<a href="https://www.youtube.com/channel/UCDWAUW99-3iySF-OvbJP6Ag" target="_blank"> 
-						<img class="r_icon w3-hover-opacity" src="images/Youtube.png" alt="Youtube"> 
+					<a href="https://www.youtube.com/channel/UCDWAUW99-3iySF-OvbJP6Ag" target="_blank">
+						<img class="r_icon w3-hover-opacity" src="images/Youtube.png" alt="Youtube">
 					</a>
-					<a href="https://twitter.com/sarvesh_smcs2" target="_blank"> 
-						<img class="r_icon w3-hover-opacity" src="images/Twitter.png" alt="Twitter">                 
+					<a href="https://twitter.com/sarvesh_smcs2" target="_blank">
+						<img class="r_icon w3-hover-opacity" src="images/Twitter.png" alt="Twitter">
 					</a>
-					<a href="https://www.github.com/sarvesh18" target="_blank"> 
-						<img class="r_left_align r_icon w3-hover-opacity" src="images/Github.png" alt="Github"> 
+					<a href="https://www.github.com/sarvesh18" target="_blank">
+						<img class="r_left_align r_icon w3-hover-opacity" src="images/Github.png" alt="Github">
 					</a>
-					<a href="https://www.linkedin.com/in/sarvesh18" target="_blank"> 
 						<img class="r_icon w3-hover-opacity" src="images/LinkedIn.png" alt="LinkedIn">
+						<a href="https://www.linkedin.com/in/sarvesh18" target="_blank">
 					</a>
 					<br>
 			</div>
@@ -327,30 +375,30 @@
 			<div class="r_map">
 				<h4 class="r_heading w3-center"><strong>REACH ME</strong><h4><br>
 					<!--
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14036.28784659827!2d77.0403477!3d28.4170854!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdb611be44b70aad0!2sExalatic!5e0!3m2!1sen!2sin!4v1488013336136" frameborder="0" style="border:0" class="r_map_frame"allowfullscreen></iframe>				
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14036.28784659827!2d77.0403477!3d28.4170854!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdb611be44b70aad0!2sExalatic!5e0!3m2!1sen!2sin!4v1488013336136" frameborder="0" style="border:0" class="r_map_frame"allowfullscreen></iframe>
 					-->
 				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="sarvesh18"><a class="LI-simple-link" href='https://in.linkedin.com/in/sarvesh18?trk=profile-badge'>Sarvesh Singh</a></div>
 			</div>
-			
+
 		</div>
-		
+
 		<div class="w3-center">
-			<h4 class="r_heading"><strong>&copy; 2018</strong><h4>
+			<h4 class="r_heading"><strong>Copyright &copy; 2018. All Rights Reserved</strong><h4>
 			<br>
 	<!-- 		All rights reserved
 			<h4 class="r_heading"><strong>Developed & Maintained by <a href="" target="_blank">Sarvesh</a></strong><h4> -->
 		</div>
-	</div>
-	</footer>	
-	
+
+	</footer>
+
 	<!--
 	<div class="w3-content w3-margin-top" style="max-width:1400px;">
 		<div class="w3-row-padding">
-			<div class="w3-third"> 
-				<div class="w3-white w3-text-grey w3-card-4">		
-					
+			<div class="w3-third">
+				<div class="w3-white w3-text-grey w3-card-4">
+
 					<div class="w3-display-container">
-						<img src="images/Sarvesh.jpg" style="width:100%" alt="Sarvesh"> 
+						<img src="images/Sarvesh.jpg" style="width:100%" alt="Sarvesh">
 					</div>
 
 					<div class="w3-container">
@@ -359,9 +407,9 @@
 						<p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sarvesh.singh18@hotmail.com</p>
 						<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+91-9454777897</p>
 						<hr>
-	
+
 						<p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-			  
+
 							<p>C++</p>
 							<div class="w3-light-grey w3-round-xlarge w3-small">
 								<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
@@ -370,37 +418,37 @@
 							<div class="w3-light-grey w3-round-xlarge w3-small">
 								<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
 							</div>
-	
+
 						<p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Interests / Hobbies</b></p>
-			  
+
 							<p>Coding</p>
 							<p>Software Development</p>
-	
+
 						<p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Certification</b></p>
-							
+
 							<p>IMAD-IIT Madras & Hasura</p>
-	
+
 					</div>
 				</div>
 				<br>
 			</div>
-			
-	
-			<div class="w3-twothird">    
-	
+
+
+			<div class="w3-twothird">
+
 				<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-	
+
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Career Objective</h2>
 						<div class="w3-container">
 							<h5 class="w3-opacity"><b>I enjoy being challenged and working on projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me and the success of your organization.</b></h5>
 						</div>
-	
+
 				</div>
-		  
+
 				<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-	
+
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Internship Experience</h2>
-		 
+
 						<div class="w3-container">
 							<h5 class="w3-opacity"><b>ReactJS Developer / <a href="http://pinnacle.works/" target="_blank">Pinnacle Works</a></b></h5>
 							<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2018 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
@@ -418,13 +466,13 @@
 							<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2017 - July 2017</h6>
 							<p>Description</p>
 						</div>
-	
+
 				</div>
-		  
+
 				<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-	
+
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
-			
+
 						<div class="w3-container">
 							<h5 class="w3-opacity"><b><a href="https://github.com/Sarvesh18/Image-Processing/tree/master/Drishti%20(Genero15)" target="_blank">DRISHTI (Genero15)</a></b></h5>
 							<p>The objective was to build an Autonomous Robot capable of Detecting squares, circles, triangle using Overhead Camera and take a Decision to traverse a path from source to destination in Shortest Possible Time.</p>
@@ -440,13 +488,13 @@
 							<p>The objective was to develop ChatBot based on Banking System.</p>
 							<hr>
 						</div>
-	
+
 				</div>
-		 
+
 				<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-	
+
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-			
+
 						<div class="w3-container">
 							<h5 class="w3-opacity"><b>B.Tech.(IT) from ABES Engineering College, Ghaziabad</b></h5>
 							<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2014 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
@@ -464,25 +512,25 @@
 							<h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2009 - 2011</h6>
 							<p>8.6 CGPA</p><br>
 						</div>
-	
+
 				</div>
-			
+
 				<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-	
+
 					<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Achievements</h2>
-			
+
 						<div class="w3-container">
 							<h5 class="w3-opacity"><b>3rd prize in Image Processing(OpenCV) in College-Fest</b></h5>
 							<h5 class="w3-opacity"><b>4rd prize in Warehouse(Robotics) at IIT, Kharagpur</b></h5>
 							<h5 class="w3-opacity"><b>5rd prize in IBM Challenge(ChatBot) at IIIT, Delhi</b></h5>
 						</div>
-	
+
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 	-->
-	
+
 	<!--
 		<div class="w3-container w3-padding-64 w3-theme-l5" id="myContact">
 			<div class="w3-row">
@@ -494,7 +542,7 @@
 					<p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +919454777897</p>
 					<p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  sarvesh.singh18@hotmail.com</p>
 				</div>
-				
+
 				<div class="w3-col m7">
 					<div class="w3-container w3-card-4 w3-padding-16 w3-white">
 						<div class="w3-group">
@@ -516,7 +564,7 @@
 				</div>
 			</div>
 		</div>
-	-->	
+	-->
 
 	</body>
 </html>

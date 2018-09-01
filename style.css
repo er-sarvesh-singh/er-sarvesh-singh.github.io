@@ -1,20 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-	height:100%;
-
-}
-
-body {
-	height:100%;
-	margin: 0;
-}
-
 .r_footer
 {
-	width:99%;	
+	width:99%;
 	margin:0 .5% 0 .5%;
 	background-color:rgb(245,245,245);
 }
@@ -30,7 +16,7 @@ body {
 {
 	width:100%;
 	display:inline-block;
-	
+
 }
 .r_contact_details
 {
@@ -59,7 +45,7 @@ body {
 	margin:6% 0 5% 5%;
 	font-size:18px;
 	width:75%;
-	color:rgb(90,74,66);	
+	color:rgb(90,74,66);
 }
 .r_heading
 {   text-align:center;
@@ -67,7 +53,7 @@ body {
 	width:100%;
 	margin:0;
 	padding:0;
-	font-family:"Century Gothic",Arial, Helvetica, serif;	
+	font-family:"Century Gothic",Arial, Helvetica, serif;
 }
 .r_contact_icon
 {
@@ -76,7 +62,7 @@ body {
 }
 
 .r_social_details
-{  
+{
 	width:30%;
 	margin:2% 2% 0 2%;
 	//background:green;
@@ -94,8 +80,8 @@ body {
 .r_left_align
 {
 	margin-left:16%;
-	
-	
+
+
 }
 
 .r_map
