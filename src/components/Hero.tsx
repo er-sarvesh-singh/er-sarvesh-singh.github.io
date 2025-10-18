@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiDownload, FiInstagram } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiDownload, FiInstagram } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { SiLeetcode, SiHackerrank, SiCodechef } from 'react-icons/si';
 import { useLocalization } from '../contexts/LocalizationContext';
