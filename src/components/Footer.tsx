@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLocalization } from '../contexts/LocalizationContext';
 import { FiCode } from 'react-icons/fi';
-import { socialLinks, navigation, personal, tagline, quote, copyright, techStack } from '@/data/portfolio.json';
+import { socialLinks, navigation, personal, tagline, quote } from '@/data/portfolio.json';
 
 const Footer: React.FC = () => {
   const { t } = useLocalization();
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       }))
     },
     {
-      title: t('footer.socialLinks'),
+      title: t('common.socialLinks'),
       links: [
         { label: 'LinkedIn', href: socialLinks.linkedin },
         { label: 'GitHub', href: socialLinks.github },
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              {copyright.replace('{{year}}', currentYear.toString())}
+              {t('footer.copyright').replace('{{year}}', currentYear.toString())}
             </motion.p>
 
             {/* Tech Stack */}
@@ -131,26 +131,27 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <FiCode className="w-4 h-4" />
-              <span>{techStack}</span>
+              <span>{t('footer.techStack')}</span>
             </motion.div>
           </div>
         </div>
 
         {/* Motivational Quote */}
-        <motion.div
-          className="mt-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <blockquote className="text-lg italic text-muted-foreground">
-            "{quote.text}"
-          </blockquote>
-          <cite className="text-sm text-muted-foreground mt-2 block">
-            - {quote.author}
-          </cite>
-        </motion.div>
+        {quote.enable && <motion.div
+            className="mt-8 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <blockquote className="text-lg italic text-muted-foreground">
+              "{quote.text}"
+            </blockquote>
+            <cite className="text-sm text-muted-foreground mt-2 block">
+              - {quote.author}
+            </cite>
+          </motion.div>
+        }
       </div>
     </footer>
   );

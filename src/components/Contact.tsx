@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold mb-6">{t('footer.socialLinks')}</h3>
+              <h3 className="text-2xl font-bold mb-6">{t('common.socialLinks')}</h3>
               <p className="text-muted-foreground mb-8">
                 {t('contact.info.introText')}
               </p>
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div>
-                <p className="text-sm text-muted-foreground mb-4">{t('footer.socialLinks')}</p>
+                <p className="text-sm text-muted-foreground mb-4">{t('common.socialLinks')}</p>
                 <div className="flex flex-wrap gap-4">
                   {socialProfiles.map((link) => {
                     const Icon = link.icon;

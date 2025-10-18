@@ -20,35 +20,19 @@
           "description": "Description",
           "responsibilities": [],
           "achievements": [],
-          "technologies": [
-            "Node.js",
-            "Nest.js",
-            "React",
-            "Next.js",
-            "TypeScript",
-            "AWS",
-            "Azure",
-            "Microservices",
-            "Microfrontend"
-          ]
+          "technologies": ["Node.js", "Nest.js", "React", "Next.js", "TypeScript", "Tailwind CSS", "AWS", "Azure", "Microservices", "Microfrontend"]
         },
         {
           "id": "ps-senior-associate-l1",
           "title": "Senior Associate L1",
           "startDate": "2021-10-01",
-          "endDate": "2024-10-31",
+          "endDate": "2024-09-30",
           "description": "Description",
           "responsibilities": [],
           "achievements": [
             "Received Core Value Award at Global Townhall 2024"
           ],
-          "technologies": [
-            "Node.js",
-            "Nest.js",
-            "React",
-            "Next.js",
-            "TypeScript"
-          ]
+          "technologies": ["Node.js", "Nest.js", "React", "Next.js", "TypeScript", "Tailwind CSS"]
         }
       ]
     },
@@ -72,14 +56,7 @@
             "Recognized as 'Solutioning Stars' for 2020-2021",
             "Received Daily Reward and Recognition"
           ],
-          "technologies": [
-            "Node.js",
-            "React.js",
-            "MongoDB",
-            "Express.js",
-            "MySQL",
-            "AWS"
-          ]
+          "technologies": ["Node.js", "Express.js", "React.js", "MongoDB", "MySQL", "PostgreSQL", "Redis"]
         },
         {
           "id": "daffodil-junior",
@@ -92,12 +69,7 @@
             "Received Daily Reward and Recognition",
             "Awarded 'Process Orienter' for 2018-2019"
           ],
-          "technologies": [
-            "Node.js",
-            "React.js",
-            "JavaScript",
-            "HTML/CSS"
-          ]
+          "technologies": ["Node.js", "React.js", "JavaScript", "HTML/CSS"]
         }
       ]
     },
@@ -121,12 +93,7 @@
           "achievements": [
             "Contributed to Hasura GraphQL Engine open-source project"
           ],
-          "technologies": [
-            "Node.js",
-            "GraphQL",
-            "PostgreSQL",
-            "Docker"
-          ]
+          "technologies": ["Node.js", "GraphQL", "PostgreSQL", "Docker"]
         }
       ]
     }

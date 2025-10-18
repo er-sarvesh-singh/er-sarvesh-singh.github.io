@@ -2,12 +2,70 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
 import { useLocalization } from '../contexts/LocalizationContext';
+import { categories } from '@/data/skills.json';
+import { projects } from '@/data/projects.json';
+import { companies } from '@/data/experience.json';
 import { about, qualities } from '@/data/portfolio.json';
-import { calculateStats, calculateYearsOfExperience } from '../utils';
+import { calculateYearsOfExperience } from '../utils';
+
+interface Stat {
+  label: string;
+  value: string;
+}
 
 const About: React.FC = () => {
   const { ref, inView } = useInViewAnimation();
   const { t } = useLocalization();
+  
+  const calculateStats = (): Stat[] => {
+    // Calculate years of experience using centralized function
+    const yearsOfExperience = calculateYearsOfExperience();
+
+    // Calculate total technologies from skills data
+    const totalTechnologies = categories.reduce((total, category) => {
+      return total + category.skills.length;
+    }, 0);
+
+    // Calculate awards from experience data
+    let totalAwards = 0;
+    companies.forEach(company => {
+      company.positions.forEach(position => {
+        if (position.achievements) {
+          // Count specific awards mentioned in achievements
+          position.achievements.forEach((achievement: string) => {
+            if (achievement.toLowerCase().includes('award') ||
+                achievement.toLowerCase().includes('recognized') ||
+                achievement.toLowerCase().includes('stars') ||
+                achievement.toLowerCase().includes('orienter')) {
+              totalAwards++;
+            }
+          });
+        }
+      });
+    });
+
+    // Projects count from projects data
+    const totalProjects = projects.length;
+
+    return [
+      {
+        label: 'Experience',
+        value: `${yearsOfExperience}+`
+      },
+      {
+        label: 'Projects',
+        value: `${totalProjects}+`
+      },
+      {
+        label: 'Technologies',
+        value: `${totalTechnologies}+`
+      },
+      {
+        label: 'Awards',
+        value: `${totalAwards}+`
+      }
+    ];
+  };
   
   const stats = calculateStats();
 
@@ -72,7 +130,7 @@ const About: React.FC = () => {
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {t(`about.${stat.label.toLowerCase().replace(/\s+/g, '_')}`)}
+                    {t(`about.${stat.label}`)}
                   </div>
                 </motion.div>
               ))}

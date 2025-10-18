@@ -3,16 +3,19 @@
     "name": "Sarvesh Singh",
     "title": "Senior Software Engineer",
     "subtitle": "Full Stack Developer",
+    "yearOfExp": "7.5",
     "company": "Publicis Sapient",
     "email": "sarvesh.singh18@hotmail.com",
     "phone": "+91-9454777897",
     "location": "Gurugram, India",
     "resumeUrl": "https://drive.google.com/file/d/1n-28YwbYZO2Yu-jgcC08BV2fGwD8dyhC/view?usp=sharing",
-    "profileImage": "/images/Sarvesh.jpg"
+    "profileImage": "/images/Profile_Image.png"
   },
+  "tagline": "{{title}} crafting digital experiences with passion and precision.",
+  "description": "Professional portfolio of {{name}} - {{title}} with {{years}}+ years of experience in full-stack development, specializing in React, Node.js, and cloud technologies.",
   "bio": "With {{years}}+ years of experience in designing, developing, and deploying scalable web applications and services using microfrontend and microservices architectures.",
   "about": [
-    "I'm a passionate technology professional with 7+ years of experience designing, developing, and deploying scalable web applications and services. From starting as an intern to now leading development teams as a Team Lead at Publicis Sapient, my journey has been fueled by continuous learning and a drive to innovate."
+    "I'm a passionate technology professional with {{years}}+ years of experience designing, developing, and deploying scalable web applications and services. From starting as an intern to now leading development teams as a Team Lead at Publicis Sapient, my journey has been fueled by continuous learning and a drive to innovate."
   ],
   "qualities": ["Problem Solver", "Team Leader", "Innovation Driven", "Continuous Learner"],
   "socialLinks": {
@@ -35,9 +38,8 @@
     { "label": "Projects", "href": "#projects" },
     { "label": "Contact", "href": "#contact" }
   ],
-  "copyright": "© {{year}} Sarvesh Singh. All rights reserved.",
-  "techStack": "Built with React, TypeScript & Tailwind CSS",
   "quote": {
+    "enable": false,
     "text": "Some Goals are So Worthy, It's Glorious Even To Fail.",
     "author": "Capt. Manoj Kumar Pandey, PVC(P)"
   }

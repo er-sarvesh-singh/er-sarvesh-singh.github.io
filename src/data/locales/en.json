@@ -15,6 +15,7 @@
     "comingSoon": "Coming soon",
     "soon": "Soon",
     "more": "more",
+    "socialLinks": "Connect with me",
     "whatsappMessage": "Hi {{name}}, I found your portfolio and would like to connect!"
   },
   "navigation": {
@@ -28,7 +29,6 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "socialLinks": "Connect with me",
     "cta": {
       "contact": "Get In Touch",
       "resume": "Download Resume"
@@ -36,10 +36,10 @@
   },
   "about": {
     "title": "About Me",
-    "years_of_experience": "Years of Experience",
-    "projects_completed": "Projects Completed",
-    "technologies_mastered": "Technologies Mastered",
-    "awards_received": "Awards Received"
+    "experience": "Years of Experience",
+    "projects": "Projects Completed",
+    "technologies": "Technologies Mastered",
+    "awards": "Awards Received"
   },
   "experience": {
     "title": "Work Experience",
@@ -114,8 +114,9 @@
   },
   "footer": {
     "quickLinks": "Quick Links",
-    "socialLinks": "Connect with me",
-    "madeWithLove": "Made with {{heart}} and {{coffee}}"
+    "madeWithLove": "Made with {{heart}} and {{coffee}}",
+    "techStack": "Built with React, TypeScript & Tailwind CSS",
+    "copyright": "© {{year}} Sarvesh Singh. All rights reserved."
   },
   "accessibility": {
     "skipToContent": "Skip to content",

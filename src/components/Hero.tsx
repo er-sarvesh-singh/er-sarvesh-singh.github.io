@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
 
           {/* Social Links */}
           <motion.div variants={itemVariants}>
-            <p className="text-sm text-muted-foreground mb-4">{t('hero.socialLinks')}</p>
+            <p className="text-sm text-muted-foreground mb-4">{t('common.socialLinks')}</p>
             <div className="flex flex-wrap gap-4 justify-center">
               {/* Main Social Links */}
               <div className="flex flex-wrap gap-4 justify-center">

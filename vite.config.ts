@@ -14,7 +14,7 @@ export default defineConfig({
       manifest: {
         name: `${personal.name} - ${personal.title}`,
         short_name: `${personal.name.split(' ')[0]} Portfolio`,
-        description: description.replace('{{name}}', personal.name).replace('{{title}}', personal.title).replace('{{year}}', personal.yearOfExp),
+        description: description.replace('{{name}}', personal.name).replace('{{title}}', personal.title).replace('{{years}}', personal.yearOfExp),
         theme_color: '#1a202c',
         background_color: '#ffffff',
         display: 'standalone',
