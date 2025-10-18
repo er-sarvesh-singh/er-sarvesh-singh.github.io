@@ -71,7 +71,7 @@ const Education: React.FC = () => {
                             <img
                               src={edu.logo}
                               alt={`${edu.name} logo`}
-                              className="w-6 h-6 object-contain"
+                              className="w-10 h-10 object-contain"
                             />
                           ) : (
                             <FiBook className="w-6 h-6 text-primary" />
