@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import LoadingSpinner from './components/LoadingSpinner';
 import ScrollToTop from './components/ScrollToTop';
 import { useScrollReveal } from './hooks/useScrollReveal';
-import portfolioData from '@/data/portfolio.json';
+import { personal } from '@/data/portfolio.json';
 
 // Lazy load heavy components for better performance
 const About = lazy(() => import('./components/About'));
@@ -23,7 +23,7 @@ function App() {
   return (
     <ThemeProvider>
       <Helmet>
-        <title>{portfolioData.personal.name} - {portfolioData.personal.title} | {portfolioData.hero.subtitle}</title>
+        <title>{personal.name} - {personal.title} | {personal.subtitle}</title>
       </Helmet>
       
       <div className="min-h-screen bg-background text-foreground">

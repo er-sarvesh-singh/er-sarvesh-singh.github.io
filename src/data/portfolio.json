@@ -1,34 +1,22 @@
 {
   "personal": {
     "name": "Sarvesh Singh",
-    "title": "Senior Associate L2 (Team Lead)",
+    "title": "Senior Software Engineer",
+    "subtitle": "Full Stack Developer",
     "company": "Publicis Sapient",
     "email": "sarvesh.singh18@hotmail.com",
     "phone": "+91-9454777897",
-    "whatsapp": "919454777897",
     "location": "Gurugram, India",
     "resumeUrl": "https://drive.google.com/file/d/1n-28YwbYZO2Yu-jgcC08BV2fGwD8dyhC/view?usp=sharing",
     "profileImage": "/images/Sarvesh.jpg"
   },
-  "hero": {
-    "greeting": "Hi, I'm",
-    "subtitle": "Senior Software Engineer | Full Stack Developer",
-    "bio": "in designing, developing, and deploying scalable web applications and services using microfrontend and microservices architectures.",
-    "cta": {
-      "primary": "Get In Touch",
-      "secondary": "Download Resume"
-    }
-  },
-  "about": {
-    "title": "About Me",
-    "paragraphs": [
-      "I'm a passionate Senior Associate L2 (Team Lead) at Publicis Sapient with extensive experience in building scalable web applications and leading development teams. My journey in tech has been marked by continuous growth, from intern to team lead, driven by a constant desire to learn and innovate.",
-      "Throughout my career at companies like Publicis Sapient, Daffodil Software, and Hasura, I've helped transform ideas into robust digital solutions for Fortune 500 clients. I specialize in full-stack development with expertise in React, Node.js, TypeScript, and cloud technologies, with a strong focus on enterprise-scale applications and digital transformation.",
-      "My achievements include receiving the Core Value Award at Publicis Sapient's Global Townhall 2024, being recognized as 'Solutioning Stars' and 'Process Orienter' at Daffodil Software. When I'm not coding, you'll find me mentoring team members, contributing to technical excellence initiatives, or exploring the latest tech trends. I believe in writing clean, maintainable code and creating exceptional user experiences."
-    ],
-    "qualities": ["Problem Solver", "Team Leader", "Innovation Driven", "Continuous Learner"]
-  },
+  "bio": "With {{years}}+ years of experience in designing, developing, and deploying scalable web applications and services using microfrontend and microservices architectures.",
+  "about": [
+    "I'm a passionate technology professional with 7+ years of experience designing, developing, and deploying scalable web applications and services. From starting as an intern to now leading development teams as a Team Lead at Publicis Sapient, my journey has been fueled by continuous learning and a drive to innovate."
+  ],
+  "qualities": ["Problem Solver", "Team Leader", "Innovation Driven", "Continuous Learner"],
   "socialLinks": {
+    "whatsapp": "https://wa.me/919454777897?text=",
     "github": "https://github.com/er-sarvesh-singh",
     "linkedin": "https://www.linkedin.com/in/sarvesh18",
     "instagram": "https://www.instagram.com/er.sarvesh.singh",
@@ -47,12 +35,10 @@
     { "label": "Projects", "href": "#projects" },
     { "label": "Contact", "href": "#contact" }
   ],
-  "footer": {
-    "copyright": "© 2024 Sarvesh Singh. All rights reserved.",
-    "techStack": "Built with React, TypeScript & Tailwind CSS",
-    "quote": {
-      "text": "Some Goals are So Worthy, It's Glorious Even To Fail.",
-      "author": "Capt. Manoj Kumar Pandey, PVC(P)"
-    }
+  "copyright": "© {{year}} Sarvesh Singh. All rights reserved.",
+  "techStack": "Built with React, TypeScript & Tailwind CSS",
+  "quote": {
+    "text": "Some Goals are So Worthy, It's Glorious Even To Fail.",
+    "author": "Capt. Manoj Kumar Pandey, PVC(P)"
   }
 }

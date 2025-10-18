@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
-import portfolioData from './src/data/portfolio.json';
+import { personal, description } from './src/data/portfolio.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,9 +12,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: `${portfolioData.personal.name} - ${portfolioData.personal.title}`,
-        short_name: `${portfolioData.personal.name.split(' ')[0]} Portfolio`,
-        description: `Professional portfolio of ${portfolioData.personal.name} - ${portfolioData.personal.title} with 7+ years of experience`,
+        name: `${personal.name} - ${personal.title}`,
+        short_name: `${personal.name.split(' ')[0]} Portfolio`,
+        description: description.replace('{{name}}', personal.name).replace('{{title}}', personal.title).replace('{{year}}', personal.yearOfExp),
         theme_color: '#1a202c',
         background_color: '#ffffff',
         display: 'standalone',

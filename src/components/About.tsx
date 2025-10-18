@@ -2,14 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
 import { useLocalization } from '../contexts/LocalizationContext';
-import { calculateStats } from '../utils/calculateStats';
-import portfolioData from '@/data/portfolio.json';
+import { about, qualities } from '@/data/portfolio.json';
+import { calculateStats, calculateYearsOfExperience } from '../utils';
 
 const About: React.FC = () => {
   const { ref, inView } = useInViewAnimation();
   const { t } = useLocalization();
   
-  // Calculate stats dynamically
   const stats = calculateStats();
 
   return (
@@ -30,21 +29,32 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Content */}
             <div className="space-y-6">
-              {portfolioData.about.paragraphs.map((paragraph, index) => (
+              {about.map((paragraph, index) => (
                 <p key={index} className="text-lg text-muted-foreground">
-                  {paragraph}
+                  {paragraph.replace('{{years}}', calculateYearsOfExperience())}
                 </p>
               ))}
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                {portfolioData.about.qualities.map((quality) => (
-                  <span 
-                    key={quality}
-                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
-                  >
-                    {quality}
-                  </span>
-                ))}
+              <div className="pt-4">
+                {/*<h3 className="text-lg font-semibold mb-4 text-foreground">Core Strengths</h3>*/}
+                <div className="grid grid-cols-2 gap-3">
+                  {qualities.map((quality, index) => (
+                    <motion.div
+                      key={quality}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                      className="group"
+                    >
+                      <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/20 hover:border-primary/40 hover:from-primary/10 hover:to-primary/20 transition-all duration-300 cursor-default">
+                        <div className="flex-shrink-0 w-2 h-2 bg-primary rounded-full group-hover:scale-125 transition-transform duration-300" />
+                        <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors duration-300">
+                          {quality}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
 

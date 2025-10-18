@@ -1,5 +1,6 @@
 {
   "common": {
+    "resume": "Resume",
     "loading": "Loading...",
     "error": "Something went wrong",
     "retry": "Try Again",
@@ -10,7 +11,11 @@
     "lightMode": "Light Mode",
     "language": "Language",
     "english": "English",
-    "hindi": "Hindi"
+    "hindi": "Hindi",
+    "comingSoon": "Coming soon",
+    "soon": "Soon",
+    "more": "more",
+    "whatsappMessage": "Hi {{name}}, I found your portfolio and would like to connect!"
   },
   "navigation": {
     "home": "Home",
@@ -23,8 +28,7 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "role": "Senior Software Engineer",
-    "subtitle": "Full Stack Developer",
+    "socialLinks": "Connect with me",
     "cta": {
       "contact": "Get In Touch",
       "resume": "Download Resume"
@@ -41,8 +45,10 @@
     "title": "Work Experience",
     "subtitle": "My Professional Journey",
     "present": "Present",
-    "responsibilities": "Key Responsibilities",
-    "achievements": "Achievements",
+    "current": "Current",
+    "promoted": "Promoted",
+    "responsibilities": "Key Responsibilities:",
+    "achievements": "Achievements:",
     "technologies": "Technologies Used"
   },
   "education": {
@@ -59,7 +65,8 @@
     "title": "Technical Skills",
     "subtitle": "Technologies I Work With",
     "yearsOfExperience": "years of experience",
-    "proficiency": "Proficiency"
+    "proficiency": "Proficiency",
+    "otherSkills": "Other Skills"
   },
   "projects": {
     "title": "Featured Projects",
@@ -88,21 +95,27 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Failed to send message. Please try again."
+      "error": "Failed to send message. Please try again.",
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "subject": "Project Discussion",
+        "message": "Tell me about your project..."
+      }
     },
     "info": {
       "email": "Email",
       "phone": "Phone",
       "location": "Location",
-      "availability": "Available for freelance work"
+      "availability": "Available for freelance work",
+      "availabilityDescription": "Open to new opportunities and collaborations",
+      "introText": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!"
     }
   },
   "footer": {
-    "copyright": "© 2024 Sarvesh Singh. All rights reserved.",
-    "builtWith": "Built with React, TypeScript & Tailwind CSS",
-    "socialLinks": "Connect with me",
     "quickLinks": "Quick Links",
-    "resume": "Resume"
+    "socialLinks": "Connect with me",
+    "madeWithLove": "Made with {{heart}} and {{coffee}}"
   },
   "accessibility": {
     "skipToContent": "Skip to content",

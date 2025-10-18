@@ -1,28 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiDownload, FiInstagram } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
-import { SiLeetcode, SiHackerrank, SiCodechef } from 'react-icons/si';
 import { useLocalization } from '../contexts/LocalizationContext';
-import portfolioData from '@/data/portfolio.json';
-import { calculateYearsOfExperience, CAREER_START_DATE } from '@/utils/calculateStats';
+import { FaWhatsapp } from 'react-icons/fa';
+import { FiGithub, FiLinkedin, FiMail, FiDownload, FiInstagram } from 'react-icons/fi';
+import { SiLeetcode, SiHackerrank, SiCodechef } from 'react-icons/si';
+import { personal, bio, socialLinks } from '@/data/portfolio.json';
+import { calculateYearsOfExperience } from '@/utils';
 
 const Hero: React.FC = () => {
   const { t } = useLocalization();
 
-  const socialLinks = [
-    { icon: FiLinkedin, href: portfolioData.socialLinks.linkedin, label: 'LinkedIn', color: 'hover:bg-blue-600' },
-    { icon: FiGithub, href: portfolioData.socialLinks.github, label: 'GitHub', color: 'hover:bg-gray-700' },
-    { icon: FiInstagram, href: portfolioData.socialLinks.instagram, label: 'Instagram', color: 'hover:bg-pink-600' },
-    { icon: FaWhatsapp, href: `https://wa.me/${portfolioData.personal.whatsapp}?text=${encodeURIComponent('Hi Sarvesh, I found your portfolio and would like to connect!')}`, label: 'WhatsApp', color: 'hover:bg-green-600' },
-    //{ icon: FiTwitter, href: portfolioData.socialLinks.twitter, label: 'Twitter', color: 'hover:bg-blue-400' },
-    { icon: FiMail, href: `mailto:${portfolioData.personal.email}`, label: 'Email', color: 'hover:bg-red-600' },
+  const socialProfiles = [
+    { icon: FiLinkedin, href: socialLinks.linkedin, label: 'LinkedIn', color: 'hover:bg-blue-600' },
+    { icon: FiGithub, href: socialLinks.github, label: 'GitHub', color: 'hover:bg-gray-700' },
+    { icon: FiInstagram, href: socialLinks.instagram, label: 'Instagram', color: 'hover:bg-pink-600' },
+    { icon: FaWhatsapp, href: `${socialLinks.whatsapp}${encodeURIComponent(t('common.whatsappMessage').replace('{{name}}', personal.name.split(' ')[0]))}`, label: 'WhatsApp', color: 'hover:bg-green-600' },
+    { icon: FiMail, href: `mailto:${personal.email}`, label: 'Email', color: 'hover:bg-red-600' },
   ];
 
   const codingProfiles = [
-    { icon: SiLeetcode, href: portfolioData.socialLinks.leetcode, label: 'LeetCode' },
-    { icon: SiHackerrank, href: portfolioData.socialLinks.hackerrank, label: 'HackerRank' },
-    { icon: SiCodechef, href: portfolioData.socialLinks.codechef, label: 'CodeChef' },
+    { icon: SiLeetcode, href: socialLinks.leetcode, label: 'LeetCode' },
+    { icon: SiHackerrank, href: socialLinks.hackerrank, label: 'HackerRank' },
+    { icon: SiCodechef, href: socialLinks.codechef, label: 'CodeChef' },
   ];
 
   const containerVariants = {
@@ -62,8 +61,8 @@ const Hero: React.FC = () => {
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 rounded-full blur-2xl opacity-50 animate-pulse"></div>
               <img
-                src={portfolioData.personal.profileImage}
-                alt={portfolioData.personal.name}
+                src={personal.profileImage}
+                alt={personal.name}
                 className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-background shadow-xl"
               />
             </div>
@@ -74,14 +73,14 @@ const Hero: React.FC = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold mb-4"
           >
-            {t('hero.greeting')} <span className="gradient-text">{portfolioData.personal.name}</span>
+            {t('hero.greeting')} <span className="gradient-text">{personal.name}</span>
           </motion.h1>
 
           <motion.p 
             variants={itemVariants}
             className="text-xl md:text-2xl text-muted-foreground mb-6"
           >
-            {portfolioData.hero.subtitle}
+            {personal.title} | {personal.subtitle}
           </motion.p>
 
           {/* Bio */}
@@ -89,7 +88,7 @@ const Hero: React.FC = () => {
             variants={itemVariants}
             className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            With {calculateYearsOfExperience(CAREER_START_DATE)}+ years of experience {portfolioData.hero.bio}
+            {bio.replace('{{years}}', calculateYearsOfExperience())}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -104,7 +103,7 @@ const Hero: React.FC = () => {
               {t('hero.cta.contact')}
             </a>
             <a
-              href={portfolioData.personal.resumeUrl}
+              href={personal.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline px-8 py-3 rounded-lg flex items-center gap-2"
@@ -117,11 +116,11 @@ const Hero: React.FC = () => {
 
           {/* Social Links */}
           <motion.div variants={itemVariants}>
-            <p className="text-sm text-muted-foreground mb-4">{t('footer.socialLinks')}</p>
+            <p className="text-sm text-muted-foreground mb-4">{t('hero.socialLinks')}</p>
             <div className="flex flex-wrap gap-4 justify-center">
               {/* Main Social Links */}
               <div className="flex flex-wrap gap-4 justify-center">
-                {socialLinks.map((link) => {
+                {socialProfiles.map((link) => {
                   const Icon = link.icon;
                   return (
                     <a

@@ -33,8 +33,8 @@ A modern, accessible, and performance-optimized portfolio website built with Rea
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Sarvesh18/Sarvesh18.github.io.git
-cd Sarvesh18.github.io
+git clone https://github.com/er-sarvesh-singh/er-sarvesh-singh.github.io.git
+cd er-sarvesh-singh.github.io
 ```
 
 2. Install dependencies:
@@ -88,13 +88,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Sarvesh18/Sarvesh18.github.io/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/er-sarvesh-singh/er-sarvesh-singh.github.io/issues).
 
 ## 👨‍💻 Author
 
 **Sarvesh Singh**
 - LinkedIn: [@sarvesh18](https://www.linkedin.com/in/sarvesh18/)
-- GitHub: [@Sarvesh18](https://github.com/Sarvesh18)
+- GitHub: [@Sarvesh18](https://github.com/er-sarvesh-singh)
 
 ## 🙏 Acknowledgments
 

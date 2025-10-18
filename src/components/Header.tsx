@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLocalization } from '../contexts/LocalizationContext';
 import { FiSun, FiMoon, FiMenu, FiX, FiGlobe } from 'react-icons/fi';
-import portfolioData from '@/data/portfolio.json';
+import { personal, navigation } from '@/data/portfolio.json';
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -59,12 +59,12 @@ const Header: React.FC = () => {
             transition={{ duration: 0.5 }}
             onClick={(e) => handleNavClick(e, '#')}
           >
-            {portfolioData.personal.name}
+            {personal.name}
           </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {portfolioData.navigation.map((item, index) => (
+            {navigation.map((item, index) => (
               <motion.a
                 key={item.label}
                 href={item.href}
@@ -115,9 +115,9 @@ const Header: React.FC = () => {
                         language === 'hi' ? 'bg-accent' : ''
                       }`}
                       disabled
-                      title="Coming soon"
+                      title={t('common.comingSoon')}
                     >
-                      {t('common.hindi')} (Soon)
+                      {t('common.hindi')} ({t('common.soon')})
                     </button>
                   </motion.div>
                 )}
@@ -191,7 +191,7 @@ const Header: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="container-custom py-4">
-                {portfolioData.navigation.map((item) => (
+                {navigation.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}

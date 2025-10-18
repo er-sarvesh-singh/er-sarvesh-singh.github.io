@@ -10,7 +10,7 @@
       "duration": "2014 - 2018",
       "location": "Ghaziabad, India",
       "grade": "First Division",
-      "logo": "/images/ABES_logo.png",
+      "logo": "/images/ABESEC_logo.png",
       "description": "Comprehensive 4-year program focusing on software engineering, data structures, algorithms, and modern web technologies.",
       "achievements": [
         "Participated in multiple hackathons and coding competitions",
@@ -29,16 +29,10 @@
   ],
   "certifications": [
     {
-      "name": "AWS Certified Solutions Architect",
-      "issuer": "Amazon Web Services",
-      "date": "2023",
-      "credentialId": "AWS-CSA-2023"
-    },
-    {
       "name": "React Advanced Patterns",
       "issuer": "Frontend Masters",
-      "date": "2022",
-      "credentialId": "FM-RAP-2022"
+      "date": "2021",
+      "credentialId": "FM-RAP-2021"
     },
     {
       "name": "Node.js Microservices",

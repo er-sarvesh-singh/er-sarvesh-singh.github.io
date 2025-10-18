@@ -4,7 +4,7 @@ This guide will help you deploy your React/Vite portfolio to GitHub Pages.
 
 ## Prerequisites
 
-1. Your repository name should be `<username>.github.io` (which yours already is: `Sarvesh18.github.io`)
+1. Your repository name should be `<username>.github.io` (which yours already is: `er-sarvesh-singh.github.io`)
 2. You have push access to the main branch
 
 ## Automatic Deployment (Recommended)
@@ -31,7 +31,7 @@ The project is configured with GitHub Actions for automatic deployment. Every pu
    - Go to the "Actions" tab in your repository
    - You'll see the "Deploy to GitHub Pages" workflow running
    - Once completed (usually takes 2-3 minutes), your site will be live at:
-     `https://sarvesh18.github.io/`
+     `https://er-sarvesh-singh.github.io/`
 
 ## Manual Deployment (Alternative)
 
@@ -86,7 +86,7 @@ To use a custom domain:
    ```
 
 2. Configure your domain's DNS:
-   - Add a CNAME record pointing to `sarvesh18.github.io`
+   - Add a CNAME record pointing to `er-sarvesh-singh.github.io`
    - Or add A records pointing to GitHub's IPs
 
 3. Enable HTTPS in repository settings after DNS propagation
@@ -116,6 +116,6 @@ To use a custom domain:
 
 ---
 
-Your site should be live at: https://sarvesh18.github.io/
+Your site should be live at: https://er-sarvesh-singh.github.io/
 
 For issues, check the Actions tab in your repository for deployment logs.

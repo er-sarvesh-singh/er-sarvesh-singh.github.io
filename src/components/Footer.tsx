@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLocalization } from '../contexts/LocalizationContext';
-import { FiHeart, FiCode, FiCoffee } from 'react-icons/fi';
-import portfolioData from '@/data/portfolio.json';
+import { FiCode } from 'react-icons/fi';
+import { socialLinks, navigation, personal, tagline, quote, copyright, techStack } from '@/data/portfolio.json';
 
 const Footer: React.FC = () => {
   const { t } = useLocalization();
@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   const footerLinks = [
     {
       title: t('footer.quickLinks'),
-      links: portfolioData.navigation.map(nav => ({
+      links: navigation.map(nav => ({
         label: t(`navigation.${nav.label.toLowerCase()}`),
         href: nav.href
       }))
@@ -19,21 +19,21 @@ const Footer: React.FC = () => {
     {
       title: t('footer.socialLinks'),
       links: [
-        { label: 'GitHub', href: portfolioData.socialLinks.github },
-        { label: 'LinkedIn', href: portfolioData.socialLinks.linkedin },
-        //{ label: 'Whatsapp', href: portfolioData.socialLinks.twitter },
-        { label: 'Instagram', href: portfolioData.socialLinks.instagram },
+        { label: 'LinkedIn', href: socialLinks.linkedin },
+        { label: 'GitHub', href: socialLinks.github },
+        { label: 'Instagram', href: socialLinks.instagram },
+        { label: 'Whatsapp', href: socialLinks.whatsapp }
       ],
     },
     {
       title: 'Resources',
       links: [
-        { label: t('footer.resume'), href: portfolioData.personal.resumeUrl },
-        { label: 'LeetCode', href: portfolioData.socialLinks.leetcode },
-        { label: 'HackerRank', href: portfolioData.socialLinks.hackerrank },
-        { label: 'CodeChef', href: portfolioData.socialLinks.codechef },
-        { label: 'TechGig', href: portfolioData.socialLinks.techgig },
-        { label: 'HackerEarth', href: portfolioData.socialLinks.hackerearth },
+        { label: t('common.resume'), href: personal.resumeUrl },
+        { label: 'LeetCode', href: socialLinks.leetcode },
+        { label: 'HackerRank', href: socialLinks.hackerrank },
+        { label: 'CodeChef', href: socialLinks.codechef },
+        { label: 'HackerEarth', href: socialLinks.hackerearth },
+        { label: 'TechGig', href: socialLinks.techgig },
       ],
     },
   ];
@@ -68,15 +68,12 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold gradient-text mb-4">{portfolioData.personal.name}</h3>
+              <h3 className="text-2xl font-bold gradient-text mb-4">{personal.name}</h3>
               <p className="text-muted-foreground mb-4">
-                {portfolioData.personal.title} crafting digital experiences with passion and precision.
+                {tagline.replace('{{title}}', personal.subtitle)}
               </p>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span>Made with</span>
-                <FiHeart className="w-4 h-4 text-red-500 animate-pulse" />
-                <span>and</span>
-                <FiCoffee className="w-4 h-4 text-amber-600" />
+              <div className="text-sm text-muted-foreground">
+                {t('footer.madeWithLove').replace('{{heart}}', '❤️').replace('{{coffee}}', '☕')}
               </div>
             </motion.div>
           </div>
@@ -122,7 +119,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              {portfolioData.footer.copyright.replace('2024', currentYear.toString())}
+              {copyright.replace('{{year}}', currentYear.toString())}
             </motion.p>
 
             {/* Tech Stack */}
@@ -134,7 +131,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <FiCode className="w-4 h-4" />
-              <span>{portfolioData.footer.techStack}</span>
+              <span>{techStack}</span>
             </motion.div>
           </div>
         </div>
@@ -148,10 +145,10 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
         >
           <blockquote className="text-lg italic text-muted-foreground">
-            "{portfolioData.footer.quote.text}"
+            "{quote.text}"
           </blockquote>
           <cite className="text-sm text-muted-foreground mt-2 block">
-            - {portfolioData.footer.quote.author}
+            - {quote.author}
           </cite>
         </motion.div>
       </div>

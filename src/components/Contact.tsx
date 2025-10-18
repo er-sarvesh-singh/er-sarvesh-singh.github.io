@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
 import { useLocalization } from '../contexts/LocalizationContext';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiTwitter, FiInstagram } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import portfolioData from '@/data/portfolio.json';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiInstagram } from 'react-icons/fi';
+import { personal, socialLinks } from '@/data/portfolio.json';
 
 interface FormData {
   name: string;
@@ -35,14 +35,10 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate form submission
     try {
-      // In a real application, you would send the form data to your backend
       await new Promise((resolve) => setTimeout(resolve, 2000));
       
-      // For now, we'll just log the form data
-      console.log('Form submitted:', formData);
-      
+      console.log('Form Data:', formData);
       // Reset form
       setFormData({
         name: '',
@@ -52,7 +48,7 @@ const Contact: React.FC = () => {
       });
       setSubmitStatus('success');
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error Error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -63,53 +59,47 @@ const Contact: React.FC = () => {
     {
       icon: FiMail,
       label: t('contact.info.email'),
-      value: portfolioData.personal.email,
-      href: `mailto:${portfolioData.personal.email}`,
+      value: personal.email,
+      href: `mailto:${personal.email}`,
     },
     {
       icon: FiPhone,
       label: t('contact.info.phone'),
-      value: portfolioData.personal.phone,
-      href: `tel:${portfolioData.personal.phone.replace(/[^0-9+]/g, '')}`,
+      value: personal.phone,
+      href: `tel:${personal.phone.replace(/[^0-9+]/g, '')}`,
     },
     {
       icon: FiMapPin,
       label: t('contact.info.location'),
-      value: portfolioData.personal.location,
+      value: personal.location,
       href: '#',
     },
   ];
 
-  const socialLinks = [
+  const socialProfiles = [
     { 
       icon: FiLinkedin, 
-      href: portfolioData.socialLinks.linkedin, 
+      href: socialLinks.linkedin, 
       label: 'LinkedIn',
       color: 'hover:bg-blue-600 hover:text-white'
     },
     { 
       icon: FiGithub, 
-      href: portfolioData.socialLinks.github, 
+      href: socialLinks.github, 
       label: 'GitHub',
       color: 'hover:bg-gray-700 hover:text-white'
     },
     { 
       icon: FiInstagram, 
-      href: 'https://instagram.com/sarvesh18', 
+      href: socialLinks.instagram, 
       label: 'Instagram',
       color: 'hover:bg-pink-600 hover:text-white'
     },
     { 
       icon: FaWhatsapp, 
-      href: `https://wa.me/${portfolioData.personal.whatsapp}?text=${encodeURIComponent('Hi Sarvesh, I found your portfolio and would like to connect!')}`, 
+      href: `${socialLinks.whatsapp}${encodeURIComponent(t('common.whatsappMessage').replace('{{name}}', personal.name.split(' ')[0]))}`,
       label: 'WhatsApp',
       color: 'hover:bg-green-600 hover:text-white'
-    },
-    { 
-      icon: FiTwitter, 
-      href: portfolioData.socialLinks.twitter, 
-      label: 'Twitter',
-      color: 'hover:bg-blue-400 hover:text-white'
     },
   ];
 
@@ -138,8 +128,7 @@ const Contact: React.FC = () => {
             >
               <h3 className="text-2xl font-bold mb-6">{t('footer.socialLinks')}</h3>
               <p className="text-muted-foreground mb-8">
-                I'm always interested in hearing about new projects and opportunities. 
-                Whether you have a question or just want to say hi, feel free to reach out!
+                {t('contact.info.introText')}
               </p>
 
               <div className="space-y-6 mb-8">
@@ -169,7 +158,7 @@ const Contact: React.FC = () => {
               <div>
                 <p className="text-sm text-muted-foreground mb-4">{t('footer.socialLinks')}</p>
                 <div className="flex flex-wrap gap-4">
-                  {socialLinks.map((link) => {
+                  {socialProfiles.map((link) => {
                     const Icon = link.icon;
                     return (
                       <a
@@ -187,10 +176,12 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
+              {/*
               <div className="mt-8 p-4 bg-primary/10 rounded-lg">
                 <p className="text-sm font-medium mb-1">{t('contact.info.availability')}</p>
-                <p className="text-xs text-muted-foreground">Open to new opportunities and collaborations</p>
+                <p className="text-xs text-muted-foreground">{t('contact.info.availabilityDescription')}</p>
               </div>
+              */}
             </motion.div>
 
             {/* Contact Form */}
@@ -213,7 +204,7 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-background rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
-                      placeholder="John Doe"
+                      placeholder={t('contact.form.placeholders.name')}
                     />
                   </div>
                   <div>
@@ -228,7 +219,7 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-background rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
-                      placeholder="john@example.com"
+                      placeholder={t('contact.form.placeholders.email')}
                     />
                   </div>
                 </div>
@@ -245,7 +236,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-background rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
-                    placeholder="Project Discussion"
+                    placeholder={t('contact.form.placeholders.subject')}
                   />
                 </div>
 
@@ -261,7 +252,7 @@ const Contact: React.FC = () => {
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-background rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder={t('contact.form.placeholders.message')}
                   />
                 </div>
 

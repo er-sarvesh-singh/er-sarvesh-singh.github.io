@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
+import { useLocalization } from '../contexts/LocalizationContext';
 import { FiBriefcase, FiCalendar, FiMapPin, FiTrendingUp } from 'react-icons/fi';
-import experienceData from '@/data/experience.json';
+import { title, subtitle, companies } from '@/data/experience.json';
+import { calculateDuration, formatDateRange } from '@/utils';
 
 const Experience: React.FC = () => {
   const { ref, inView } = useInViewAnimation();
+  const { t } = useLocalization();
 
   return (
     <section id="experience" className="section-padding">
@@ -17,16 +20,16 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            {experienceData.title.split(' ').map((word, index) => 
+            {title.split(' ').map((word, index) => 
               index === 1 ? <span key={index} className="gradient-text">{word}</span> : <span key={index}>{word} </span>
             )}
           </h2>
-          <p className="text-center text-muted-foreground mb-12">{experienceData.subtitle}</p>
+          <p className="text-center text-muted-foreground mb-12">{subtitle}</p>
 
           {/* Timeline Container */}
           <div className="relative max-w-6xl mx-auto">
 
-            {experienceData.companies.map((company, companyIndex) => {
+            {companies.map((company, companyIndex) => {
               const isEven = companyIndex % 2 === 0;
               
               return (
@@ -75,7 +78,7 @@ const Experience: React.FC = () => {
                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mt-2">
                           <div className="flex items-center gap-1">
                             <FiCalendar className="w-4 h-4" />
-                            <span>{company.duration} · {company.totalDuration}</span>
+                            <span>{formatDateRange(company.startDate, company.endDate)} · {calculateDuration(company.startDate, company.endDate)}</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <FiMapPin className="w-4 h-4" />
@@ -92,7 +95,7 @@ const Experience: React.FC = () => {
                             {posIndex > 0 && (
                               <div className="absolute -top-3 left-0 flex items-center gap-2 text-xs text-primary">
                                 <FiTrendingUp className="w-3 h-3" />
-                                <span className="font-medium">Promoted</span>
+                                <span className="font-medium">{t('experience.promoted')}</span>
                               </div>
                             )}
                             
@@ -101,10 +104,10 @@ const Experience: React.FC = () => {
                                 <div>
                                   <h4 className="font-semibold text-lg">{position.title}</h4>
                                   <p className="text-sm text-muted-foreground">
-                                    {position.duration} · {position.durationText}
-                                    {position.current && (
+                                    {formatDateRange(position.startDate, position.endDate)} · {calculateDuration(position.startDate, position.endDate)}
+                                    {'current' in position && position.current && (
                                       <span className="ml-2 px-2 py-1 bg-primary/20 text-primary rounded text-xs font-medium">
-                                        Current
+                                        {t('experience.current')}
                                       </span>
                                     )}
                                   </p>
@@ -115,7 +118,7 @@ const Experience: React.FC = () => {
 
                               {position.responsibilities && position.responsibilities.length > 0 && (
                                 <div className="mb-3">
-                                  <h5 className="font-medium text-sm mb-2">Key Responsibilities:</h5>
+                                  <h5 className="font-medium text-sm mb-2">{t('experience.responsibilities')}</h5>
                                   <ul className="space-y-1">
                                     {position.responsibilities.slice(0, 3).map((resp, i) => (
                                       <li key={i} className="text-xs text-muted-foreground flex items-start">
@@ -129,7 +132,7 @@ const Experience: React.FC = () => {
 
                               {position.achievements && position.achievements.length > 0 && (
                                 <div className="mb-3">
-                                  <h5 className="font-medium text-sm mb-2">Achievements:</h5>
+                                  <h5 className="font-medium text-sm mb-2">{t('experience.achievements')}</h5>
                                   <ul className="space-y-1">
                                     {position.achievements.map((achievement, i) => (
                                       <li key={i} className="text-xs text-muted-foreground flex items-start">
@@ -184,7 +187,7 @@ const Experience: React.FC = () => {
 
                   {/* Mobile Timeline */}
                   <div className="absolute left-0 top-8 w-6 h-6 bg-primary rounded-full border-4 border-background md:hidden"></div>
-                  {companyIndex !== experienceData.companies.length - 1 && (
+                  {companyIndex !== companies.length - 1 && (
                     <div className="absolute left-[11px] top-14 bottom-0 w-[2px] bg-border md:hidden"></div>
                   )}
                 </motion.div>

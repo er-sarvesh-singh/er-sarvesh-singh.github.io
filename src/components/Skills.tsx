@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
 import { useLocalization } from '../contexts/LocalizationContext';
+import { calculateYearsOfExperience } from '../utils';
 import {
   SiReact, SiNodedotjs, SiTypescript, SiJavascript, SiPython,
   SiHtml5, SiTailwindcss, SiMongodb, SiPostgresql,
@@ -10,9 +11,8 @@ import {
   SiJest, SiGitlab
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
-import skillsData from '@/data/skills.json';
+import { title, subtitle, categories, otherSkills } from '@/data/skills.json';
 
-// Icon mapping for skills
 const iconMap: { [key: string]: React.ComponentType<any> } = {
   'React': SiReact,
   'TypeScript': SiTypescript,
@@ -44,7 +44,6 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
   'Jira': SiGit, // Using Git icon as placeholder
 };
 
-// Color mapping for skills
 const colorMap: { [key: string]: string } = {
   'React': '#61DAFB',
   'TypeScript': '#3178C6',
@@ -90,14 +89,14 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            {skillsData.title.split(' ').map((word, index) => (
+            {title.split(' ').map((word, index) => (
               index === 0 ? <span key={index}>{word} </span> : <span key={index} className="gradient-text">{word}</span>
             ))}
           </h2>
-          <p className="text-center text-muted-foreground mb-12">{skillsData.subtitle}</p>
+          <p className="text-center text-muted-foreground mb-12">{subtitle}</p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {skillsData.categories.map((category, categoryIndex) => (
+            {categories.map((category, categoryIndex) => (
               <motion.div
                 key={category.name}
                 className="bg-background rounded-lg p-6 shadow-lg"
@@ -113,6 +112,7 @@ const Skills: React.FC = () => {
                   {category.skills.map((skill, skillIndex) => {
                     const Icon = iconMap[skill.name] || SiReact;
                     const color = colorMap[skill.name] || '#6B7280';
+                    const years = calculateYearsOfExperience(skill.startDate);
                     
                     return (
                       <motion.div
@@ -131,7 +131,7 @@ const Skills: React.FC = () => {
                             </div>
                             <span className="font-medium">{skill.name}</span>
                             <span className="text-xs text-muted-foreground">
-                              ({skill.years} {t('skills.yearsOfExperience')})
+                              ({years} {t('skills.yearsOfExperience')})
                             </span>
                           </div>
                           <span className="text-sm text-muted-foreground">
@@ -161,26 +161,31 @@ const Skills: React.FC = () => {
 
           {/* Additional Skills */}
           <motion.div
-            className="mt-12 text-center"
+            className="mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h3 className="text-xl font-bold mb-4">Other Skills</h3>
-            <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-              {[
-                'RESTful APIs', 'Microservices Architecture', 'Test-Driven Development',
-                'Code Review', 'Performance Optimization', 'System Design',
-                'Team Leadership', 'Problem Solving', 'Technical Documentation',
-                'Client Communication', 'Mentoring', 'Project Management'
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 bg-background rounded-full text-sm font-medium card-hover"
-                >
-                  {skill}
-                </span>
-              ))}
+            <div className="max-w-4xl mx-auto bg-background rounded-lg p-8 shadow-lg">
+              <h3 className="text-xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                <span className="text-2xl">🎯</span>
+                {t('skills.otherSkills')}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {otherSkills.map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
+                    className="group"
+                  >
+                    <div className="px-4 py-3 border-2 border-border rounded-lg text-sm font-medium text-center transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-md hover:-translate-y-0.5 cursor-default">
+                      {skill}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </motion.div>

@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
 import { useLocalization } from '../contexts/LocalizationContext';
 import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi';
-import projectsData from '@/data/projects.json';
-import portfolioData from '@/data/portfolio.json';
+import { socialLinks } from '@/data/portfolio.json';
+import { title, subtitle, projects } from '@/data/projects.json';
 
 interface Project {
   id: string;
   title: string;
   description: string;
   longDescription: string;
-  image?: string;
+  image?: string; ///images/project-taskmanager.jpg
   technologies: string[];
   features: string[];
   links: {
@@ -24,18 +24,18 @@ interface Project {
 const Projects: React.FC = () => {
   const { ref, inView } = useInViewAnimation();
   const { t } = useLocalization();
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = [
-    { value: 'all', label: t('projects.filter.all') },
+    { value: 'All', label: t('projects.filter.all') },
     { value: 'Full Stack', label: t('projects.filter.fullstack') },
     { value: 'Frontend', label: t('projects.filter.frontend') },
     { value: 'Backend', label: t('projects.filter.backend') },
   ];
 
-  const filteredProjects = projectsData.projects.filter(
-    (project) => selectedCategory === 'all' || project.category === selectedCategory
+  const filteredProjects = projects.filter(
+    (project: Project) => selectedCategory === 'All' || project.category === selectedCategory
   );
 
   return (
@@ -48,11 +48,11 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            {projectsData.title.split(' ').map((word, index) => (
+            {title.split(' ').map((word, index) => (
               index === 0 ? <span key={index}>{word} </span> : <span key={index} className="gradient-text">{word}</span>
             ))}
           </h2>
-          <p className="text-center text-muted-foreground mb-12">{projectsData.subtitle}</p>
+          <p className="text-center text-muted-foreground mb-12">{subtitle}</p>
 
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             <AnimatePresence mode="wait">
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project: Project, index: number) => (
                 <motion.div
                   key={project.id}
                   layout
@@ -139,7 +139,7 @@ const Projects: React.FC = () => {
                     ))}
                     {project.technologies.length > 4 && (
                       <span className="text-xs px-2 py-1 text-muted-foreground">
-                        +{project.technologies.length - 4} more
+                        +{project.technologies.length - 4} {t('common.more')}
                       </span>
                     )}
                   </div>
@@ -156,7 +156,7 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <a
-              href={portfolioData.socialLinks.github}
+              href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline px-8 py-3 rounded-lg inline-flex items-center gap-2"
