@@ -2,5 +2,37 @@
   "title": "Featured Projects",
   "subtitle": "Some of my recent work",
   "projects": [
+    {
+      "id": "react-app",
+      "title": "React App",
+      "description": "",
+      "longDescription": "",
+      "image": "",
+      "technologies": ["React", "Redux"],
+      "features": [
+        "Startup Kit"
+      ],
+      "links": {
+        "github": "https://github.com/er-sarvesh-singh/React-APP-JS",
+        "live": ""
+      },
+      "category": "Frontend"
+    },
+    {
+      "id": "node-api",
+      "title": "Node API",
+      "description": "",
+      "longDescription": "",
+      "image": "",
+      "technologies": ["Node.js", "Express", "Redis"],
+      "features": [
+        "Startup Kit"
+      ],
+      "links": {
+        "github": "https://github.com/er-sarvesh-singh/Node-API-JS",
+        "live": ""
+      },
+      "category": "Backend"
+    }
   ]
 }

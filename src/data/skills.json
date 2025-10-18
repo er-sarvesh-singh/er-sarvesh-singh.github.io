@@ -6,43 +6,144 @@
       "name": "Frontend Development",
       "icon": "🎨",
       "skills": [
-        { "name": "HTML5/CSS3", "level": 95, "startDate": "2016-05-01" },
-        { "name": "JavaScript", "level": 95, "startDate": "2016-05-01" },
-        { "name": "TypeScript", "level": 90, "startDate": "2020-03-01" },
-        { "name": "React", "level": 95, "startDate": "2018-06-01" },
-        { "name": "Next.js", "level": 80, "startDate": "2021-06-01" },
-        { "name": "Tailwind CSS", "level": 85, "startDate": "2021-08-01" }
+        {
+          "name": "HTML5/CSS3",
+          "rating": 4,
+          "level": 95,
+          "startDate": "2016-05-01"
+        },
+        {
+          "name": "JavaScript",
+          "rating": 4,
+          "level": 95,
+          "startDate": "2016-05-01"
+        },
+        {
+          "name": "TypeScript",
+          "rating": 4,
+          "level": 90,
+          "startDate": "2020-03-01"
+        },
+        {
+          "name": "React",
+          "rating": 5,
+          "level": 95,
+          "startDate": "2018-06-01"
+        },
+        {
+          "name": "Redux",
+          "rating": 4,
+          "level": 95,
+          "startDate": "2018-06-01"
+        },
+        {
+          "name": "Next.js",
+          "rating": 5,
+          "level": 80,
+          "startDate": "2021-06-01"
+        },
+        {
+          "name": "Tailwind CSS",
+          "rating": 4,
+          "level": 85,
+          "startDate": "2021-08-01"
+        }
       ]
     },
     {
       "name": "Database & Cloud",
       "icon": "☁️",
       "skills": [
-        { "name": "MongoDB", "level": 85, "startDate": "2019-05-01" },
-        { "name": "PostgreSQL", "level": 80, "startDate": "2020-02-01" },
-        { "name": "MySQL", "level": 75, "startDate": "2019-03-01" },
-        { "name": "Redis", "level": 70, "startDate": "2021-04-01" },
-        { "name": "Docker", "level": 75, "startDate": "2021-02-01" },
-        { "name": "Kubernetes", "level": 65, "startDate": "2022-08-01" }
+        {
+          "name": "MongoDB",
+          "rating": 3,
+          "level": 85,
+          "startDate": "2019-05-01"
+        },
+        {
+          "name": "PostgreSQL",
+          "rating": 3,
+          "level": 80,
+          "startDate": "2020-02-01"
+        },
+        {
+          "name": "MySQL",
+          "rating": 3,
+          "level": 75,
+          "startDate": "2019-03-01"
+        },
+        {
+          "name": "Redis",
+          "rating": 3,
+          "level": 70,
+          "startDate": "2021-04-01"
+        },
+        {
+          "name": "Docker",
+          "rating": 3,
+          "level": 75,
+          "startDate": "2021-02-01"
+        },
+        {
+          "name": "Kubernetes",
+          "rating": 3,
+          "level": 65,
+          "startDate": "2022-08-01"
+        }
       ]
     },
     {
       "name": "Backend Development",
       "icon": "⚙️",
       "skills": [
-        { "name": "Node.js", "level": 90, "startDate": "2018-09-01" },
-        { "name": "Nest.js", "level": 90, "startDate": "2018-09-01" },
-        { "name": "GraphQL", "level": 80, "startDate": "2020-06-01" },
-        { "name": "Python", "level": 70, "startDate": "2021-01-01" }
+        {
+          "name": "Node.js",
+          "rating": 5,
+          "level": 90,
+          "startDate": "2018-09-01"
+        },
+        {
+          "name": "Nest.js",
+          "rating": 5,
+          "level": 90,
+          "startDate": "2018-09-01"
+        },
+        {
+          "name": "GraphQL",
+          "rating": 4,
+          "level": 80,
+          "startDate": "2020-06-01"
+        },
+        {
+          "name": "Python",
+          "rating": 3,
+          "level": 70,
+          "startDate": "2021-01-01"
+        }
       ]
     },
     {
       "name": "Tools & Others",
       "icon": "🛠️",
       "skills": [
-        { "name": "Git", "level": 90, "startDate": "2016-05-01" },
-        { "name": "Jest/Testing", "level": 85, "startDate": "2019-06-01" },
-        { "name": "CI/CD", "level": 80, "startDate": "2020-04-01" }
+        {
+          "name": "Git",
+          "rating": 4,
+          "level": 90,
+          "startDate": "2016-05-01"
+        },
+        {
+          "name": "Jest/Testing",
+          "rating": 4,
+          "level": 85,
+          "startDate": "2019-06-01"
+        },
+        {
+          "name": "CI/CD",
+          "rating": 3,
+          "level": 80,
+          "startDate": "2020-04-01"
+        }
       ]
     }
   ],

@@ -2,15 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInViewAnimation } from '../hooks/useScrollReveal';
 import { useLocalization } from '../contexts/LocalizationContext';
-import { calculateYearsOfExperience } from '../utils';
 import {
   SiReact, SiNodedotjs, SiTypescript, SiJavascript, SiPython,
   SiHtml5, SiTailwindcss, SiMongodb, SiPostgresql,
   SiMysql, SiRedis, SiDocker, SiKubernetes, SiAmazonaws, SiGit,
-  SiWebpack, SiExpress, SiNextdotjs, SiGraphql,
+  SiExpress, SiNextdotjs, SiGraphql,
   SiJest, SiGitlab
 } from 'react-icons/si';
-import { FaJava } from 'react-icons/fa';
+import { FaJava, FaStar, FaRegStar } from 'react-icons/fa';
 import { title, subtitle, categories, otherSkills } from '@/data/skills.json';
 
 const iconMap: { [key: string]: React.ComponentType<any> } = {
@@ -21,12 +20,9 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
   'Redux': SiReact, // Using React icon for Redux
   'Next.js': SiNextdotjs,
   'Tailwind CSS': SiTailwindcss,
-  'Material-UI': SiReact, // Using React icon for Material-UI
   'Node.js': SiNodedotjs,
   'Express.js': SiExpress,
   'GraphQL': SiGraphql,
-  'REST APIs': SiNodedotjs, // Using Node icon for APIs
-  'Microservices': SiDocker, // Using Docker icon for Microservices
   'Python': SiPython,
   'Java': FaJava,
   'MongoDB': SiMongodb,
@@ -38,10 +34,7 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
   'Kubernetes': SiKubernetes,
   'Git': SiGit,
   'Jest/Testing': SiJest,
-  'CI/CD': SiGitlab,
-  'Webpack': SiWebpack,
-  'Agile/Scrum': SiGit, // Using Git icon as placeholder
-  'Jira': SiGit, // Using Git icon as placeholder
+  'CI/CD': SiGitlab
 };
 
 const colorMap: { [key: string]: string } = {
@@ -52,12 +45,9 @@ const colorMap: { [key: string]: string } = {
   'Redux': '#764ABC',
   'Next.js': '#000000',
   'Tailwind CSS': '#06B6D4',
-  'Material-UI': '#0081CB',
   'Node.js': '#339933',
   'Express.js': '#000000',
   'GraphQL': '#E10098',
-  'REST APIs': '#009688',
-  'Microservices': '#2496ED',
   'Python': '#3776AB',
   'Java': '#007396',
   'MongoDB': '#47A248',
@@ -69,15 +59,35 @@ const colorMap: { [key: string]: string } = {
   'Kubernetes': '#326CE5',
   'Git': '#F05032',
   'Jest/Testing': '#C21325',
-  'CI/CD': '#FC6D26',
-  'Webpack': '#8DD6F9',
-  'Agile/Scrum': '#0052CC',
-  'Jira': '#0052CC',
+  'CI/CD': '#FC6D26'
 };
 
 const Skills: React.FC = () => {
   const { ref, inView } = useInViewAnimation();
   const { t } = useLocalization();
+
+  const renderStars = (rating: number, color: string) => {
+    const stars = [];
+    
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.3, delay: i * 0.05 }}
+        >
+          {i <= rating ? (
+            <FaStar className="w-4 h-4" style={{ color }} />
+          ) : (
+            <FaRegStar className="w-4 h-4 text-muted-foreground" />
+          )}
+        </motion.span>
+      );
+    }
+    
+    return <div className="flex gap-0.5">{stars}</div>;
+  };
 
   return (
     <section id="skills" className="section-padding bg-accent/50">
@@ -112,7 +122,6 @@ const Skills: React.FC = () => {
                   {category.skills.map((skill, skillIndex) => {
                     const Icon = iconMap[skill.name] || SiReact;
                     const color = colorMap[skill.name] || '#6B7280';
-                    const years = calculateYearsOfExperience(skill.startDate);
                     
                     return (
                       <motion.div
@@ -124,32 +133,43 @@ const Skills: React.FC = () => {
                           delay: categoryIndex * 0.1 + skillIndex * 0.05,
                         }}
                       >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2">
-                            <div style={{ color }}>
-                              <Icon className="w-5 h-5" />
+                        <div className="p-3 bg-background/50 rounded-lg border border-border hover:border-primary/30 transition-all duration-300">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <div style={{ color }}>
+                                <Icon className="w-5 h-5" />
+                              </div>
+                              <div>
+                                <span className="font-medium">{skill.name}</span>
+                                {/*
+                                <span className="text-xs text-muted-foreground ml-2">
+                                  ({years} {t('skills.yearsOfExperience')})
+                                </span>
+                                */}
+                              </div>
                             </div>
-                            <span className="font-medium">{skill.name}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            {renderStars(skill.rating, color)}
                             <span className="text-xs text-muted-foreground">
-                              ({years} {t('skills.yearsOfExperience')})
+                              {skill.rating}/5
                             </span>
                           </div>
-                          <span className="text-sm text-muted-foreground">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
-                          <motion.div
-                            className="h-full rounded-full"
-                            style={{ backgroundColor: color }}
-                            initial={{ width: 0 }}
-                            animate={inView ? { width: `${skill.level}%` } : {}}
-                            transition={{
-                              duration: 1,
-                              delay: categoryIndex * 0.1 + skillIndex * 0.05,
-                              ease: 'easeOut',
-                            }}
-                          />
+                          {/*
+                          <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                            <motion.div
+                              className="h-full rounded-full"
+                              style={{ backgroundColor: color }}
+                              initial={{ width: 0 }}
+                              animate={inView ? { width: `${skill.level}%` } : {}}
+                              transition={{
+                                duration: 1,
+                                delay: categoryIndex * 0.1 + skillIndex * 0.05,
+                                ease: 'easeOut',
+                              }}
+                            />
+                          </div>
+                          */}
                         </div>
                       </motion.div>
                     );
