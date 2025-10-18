@@ -1,0 +1,106 @@
+{
+  "title": "Work Experience",
+  "subtitle": "My Professional Journey",
+  "companies": [
+    {
+      "id": "publicis-sapient",
+      "company": "Publicis Sapient",
+      "logo": "/images/PS_logo.png",
+      "duration": "Oct 2021 - Present",
+      "totalDuration": "4 yrs 1 mo",
+      "location": "Gurugram, Haryana, India",
+      "type": "Full-time · On-site",
+      "positions": [
+        {
+          "id": "ps-senior-associate-l2",
+          "title": "Senior Associate L2 (Team Lead)",
+          "duration": "Oct 2024 - Present",
+          "durationText": "1 yr 1 mo",
+          "current": true,
+          "description": "Description",
+          "responsibilities": [
+          ],
+          "achievements": [
+          ],
+          "technologies": ["Node.js", "Nest.js", "React", "Next.js", "TypeScript", "AWS", "Azure", "Microservices", "Microfrontend"]
+        },
+        {
+          "id": "ps-senior-associate-l1",
+          "title": "Senior Associate L1",
+          "duration": "Oct 2021 - Oct 2024",
+          "durationText": "3 yrs 1 mo",
+          "description": "Description",
+          "responsibilities": [
+          ],
+          "achievements": [
+            "Received Core Value Award at Global Townhall 2024"
+          ],
+          "technologies": ["Node.js", "Nest.js", "React", "Next.js", "TypeScript"]
+        }
+      ]
+    },
+    {
+      "id": "daffodil",
+      "company": "Daffodil Software",
+      "logo": "/images/Daffodil_logo.png",
+      "duration": "May 2018 - Oct 2021",
+      "totalDuration": "3 yrs 6 mos",
+      "location": "Gurugram, Haryana, India",
+      "type": "Full-time",
+      "positions": [
+        {
+          "id": "daffodil-associate",
+          "title": "Associate - IT",
+          "duration": "May 2020 - Oct 2021",
+          "durationText": "1 yr 6 mos",
+          "description": "Description",
+          "responsibilities": [
+          ],
+          "achievements": [
+            "Recognized as 'Solutioning Stars' for 2020-2021",
+            "Received Daily Reward and Recognition"
+          ],
+          "technologies": ["Node.js", "React.js", "MongoDB", "Express.js", "MySQL", "AWS"]
+        },
+        {
+          "id": "daffodil-junior",
+          "title": "Junior Associate - IT",
+          "duration": "May 2018 - May 2020",
+          "durationText": "2 yrs 1 mo",
+          "description": "Description",
+          "responsibilities": [
+          ],
+          "achievements": [
+            "Received Daily Reward and Recognition",
+            "Awarded 'Process Orienter' for 2018-2019"
+          ],
+          "technologies": ["Node.js", "React.js", "JavaScript", "HTML/CSS"]
+        }
+      ]
+    },
+    {
+      "id": "hasura",
+      "company": "Hasura",
+      "logo": "/images/Hasura_logo.png",
+      "duration": "May 2017 - July 2018",
+      "totalDuration": "3 mos",
+      "location": "Bangalore, India",
+      "type": "Internship",
+      "positions": [
+        {
+          "id": "hasura-intern",
+          "title": "Software Development Intern",
+          "duration": "Jan 2018 - Jun 2018",
+          "durationText": "6 mos",
+          "description": "Description",
+          "responsibilities": [
+          ],
+          "achievements": [
+            "Contributed to Hasura GraphQL Engine open-source project"
+          ],
+          "technologies": ["Node.js", "GraphQL", "PostgreSQL", "Docker"]
+        }
+      ]
+    }
+  ]
+}

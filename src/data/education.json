@@ -1,0 +1,50 @@
+{
+  "title": "Education",
+  "subtitle": "Academic Background",
+  "institutions": [
+    {
+      "id": "abes",
+      "name": "ABES Engineering College",
+      "degree": "Bachelor of Technology (B.Tech)",
+      "field": "Information Technology",
+      "duration": "2014 - 2018",
+      "location": "Ghaziabad, India",
+      "grade": "First Division",
+      "logo": "/images/ABES_logo.png",
+      "description": "Comprehensive 4-year program focusing on software engineering, data structures, algorithms, and modern web technologies.",
+      "achievements": [
+        "Participated in multiple hackathons and coding competitions",
+        "Active member of the college coding club",
+        "Completed final year project on 'Real-time Collaborative Code Editor'"
+      ],
+      "coursework": [
+        "Data Structures & Algorithms",
+        "Database Management Systems",
+        "Web Technologies",
+        "Software Engineering",
+        "Computer Networks",
+        "Operating Systems"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credentialId": "AWS-CSA-2023"
+    },
+    {
+      "name": "React Advanced Patterns",
+      "issuer": "Frontend Masters",
+      "date": "2022",
+      "credentialId": "FM-RAP-2022"
+    },
+    {
+      "name": "Node.js Microservices",
+      "issuer": "Udemy",
+      "date": "2021",
+      "credentialId": "UC-NM-2021"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Technical Skills",
+  "subtitle": "Technologies I Work With",
+  "categories": [
+    {
+      "name": "Frontend Development",
+      "icon": "🎨",
+      "skills": [
+        { "name": "React", "level": 95, "years": 6 },
+        { "name": "TypeScript", "level": 90, "years": 4 },
+        { "name": "JavaScript", "level": 95, "years": 8 },
+        { "name": "HTML5/CSS3", "level": 95, "years": 8 },
+        { "name": "Redux", "level": 85, "years": 5 },
+        { "name": "Next.js", "level": 80, "years": 3 },
+        { "name": "Tailwind CSS", "level": 85, "years": 3 },
+        { "name": "Material-UI", "level": 80, "years": 4 }
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "icon": "⚙️",
+      "skills": [
+        { "name": "Node.js", "level": 90, "years": 6 },
+        { "name": "Express.js", "level": 85, "years": 6 },
+        { "name": "GraphQL", "level": 80, "years": 4 },
+        { "name": "REST APIs", "level": 90, "years": 7 },
+        { "name": "Microservices", "level": 75, "years": 3 },
+        { "name": "Python", "level": 70, "years": 3 },
+        { "name": "Java", "level": 65, "years": 2 }
+      ]
+    },
+    {
+      "name": "Database & Cloud",
+      "icon": "☁️",
+      "skills": [
+        { "name": "MongoDB", "level": 85, "years": 5 },
+        { "name": "PostgreSQL", "level": 80, "years": 4 },
+        { "name": "MySQL", "level": 75, "years": 5 },
+        { "name": "Redis", "level": 70, "years": 3 },
+        { "name": "AWS", "level": 80, "years": 4 },
+        { "name": "Docker", "level": 75, "years": 3 },
+        { "name": "Kubernetes", "level": 65, "years": 2 }
+      ]
+    },
+    {
+      "name": "Tools & Others",
+      "icon": "🛠️",
+      "skills": [
+        { "name": "Git", "level": 90, "years": 8 },
+        { "name": "Jest/Testing", "level": 85, "years": 5 },
+        { "name": "CI/CD", "level": 80, "years": 4 },
+        { "name": "Webpack", "level": 75, "years": 4 },
+        { "name": "Agile/Scrum", "level": 85, "years": 6 },
+        { "name": "Jira", "level": 85, "years": 6 }
+      ]
+    }
+  ]
+}
