@@ -23,6 +23,7 @@
     "about": "About",
     "experience": "Experience",
     "education": "Education",
+    "recognition": "Recognition",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
@@ -60,6 +61,10 @@
     "achievements": "Achievements",
     "coursework": "Relevant Coursework",
     "certifications": "Certifications"
+  },
+  "recognition": {
+    "title": "Rewards & Recognition",
+    "subtitle": "Celebrating milestones and acknowledgments throughout my professional journey"
   },
   "skills": {
     "title": "Technical Skills",

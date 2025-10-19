@@ -10,12 +10,11 @@
       "duration": "2014 - 2018",
       "location": "Ghaziabad, India",
       "grade": "First Division",
-      "logo": "/images/ABESEC_logo.png",
+      "logo": "/images/logo/ABESEC.png",
       "description": "Comprehensive 4-year program focusing on software engineering, data structures, algorithms, and modern web technologies.",
       "achievements": [
         "Participated in multiple hackathons and coding competitions",
-        "Active member of the college coding club",
-        "Completed final year project on 'Real-time Collaborative Code Editor'"
+        "Active member of the college coding club"
       ],
       "coursework": [
         "Data Structures & Algorithms",

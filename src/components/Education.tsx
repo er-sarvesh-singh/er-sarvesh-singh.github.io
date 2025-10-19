@@ -25,28 +25,27 @@ const Education: React.FC = () => {
 
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-8">
-              {/* Certifications Section - Takes 1 column (33%) */}
               {certifications?.length > 0 && (
                 <div className="lg:col-span-1 order-2 lg:order-1">
                   <motion.div
-                    className="bg-background rounded-lg p-8 shadow-lg h-full"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="mt-12 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.3 }}
                   >
                     <h3 className="text-xl font-bold mb-6">{t('education.certifications')}</h3>
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-4 max-w-2xl mx-auto">
                       {certifications.map((cert, index) => (
                         <motion.div
                           key={index}
-                          className="p-4 border border-border rounded-lg hover:border-primary/50 hover:bg-accent/50 transition-all"
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={inView ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                          className="bg-background p-4 rounded-lg shadow-md card-hover"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={inView ? { opacity: 1, scale: 1 } : {}}
+                          transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
                         >
-                          <h4 className="font-semibold text-base mb-2">{cert.name}</h4>
-                          <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
-                          <p className="text-sm text-primary font-medium">{cert.date}</p>
+                          <h4 className="font-semibold text-sm mb-1">{cert.name}</h4>
+                          <p className="text-xs text-muted-foreground mb-1">{cert.issuer}</p>
+                          <p className="text-xs text-primary">{cert.date}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -54,7 +53,6 @@ const Education: React.FC = () => {
                 </div>
               )}
 
-              {/* Education Section - Takes 2 columns (67%) */}
               <div className="lg:col-span-2 order-1 lg:order-2">
                 {institutions.map((edu, index) => (
                   <motion.div
@@ -83,7 +81,7 @@ const Education: React.FC = () => {
                           <p className="text-muted-foreground">{edu.name}</p>
                         </div>
                       </div>
-                      
+
                       <div className="text-sm text-muted-foreground">
                         <div className="flex items-center gap-2 mb-1">
                           <FiCalendar />
@@ -138,8 +136,7 @@ const Education: React.FC = () => {
             </div>
           </div>
 
-          {/* Certifications */}
-          {certifications?.length > 0 && (
+          {/* certifications?.length > 0 && (
             <motion.div
               className="mt-12 text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -163,7 +160,7 @@ const Education: React.FC = () => {
                 ))}
               </div>
             </motion.div>
-          )}
+          )*/}
         </motion.div>
       </div>
     </section>

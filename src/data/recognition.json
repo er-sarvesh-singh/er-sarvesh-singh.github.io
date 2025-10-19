@@ -1,0 +1,44 @@
+{
+  "recognition": [
+      {
+      "id": 5,
+      "title": "Core Value Award",
+      "description": "Description",
+      "date": "2024",
+      "organization": "PublicisSapient",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "title": "Solutioning-Stars Award",
+      "description": "Description",
+      "date": "2021",
+      "organization": "Daffodil Software",
+      "image": "/images/recognition/2021_Solutioning-Stars.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "R&R",
+      "description": "Description",
+      "date": "2020",
+      "organization": "Daffodil Software",
+      "image": "/images/recognition/2020_R&R_2.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "R&R",
+      "description": "Description",
+      "date": "2020",
+      "organization": "Daffodil Software",
+      "image": "/images/recognition/2020_R&R_1.jpeg"
+    },
+    {
+      "id": 1,
+      "title": "Process-Orienter Award",
+      "description": "Description",
+      "date": "2019",
+      "organization": "Daffodil Software",
+      "image": "/images/recognition/2019_Process-Orienter.jpeg"
+    }
+  ]
+}

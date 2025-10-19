@@ -116,7 +116,7 @@ const Experience: React.FC = () => {
 
                               <p className="text-sm text-muted-foreground mb-3">{position.description}</p>
 
-                              {position.responsibilities && position.responsibilities.length > 0 && (
+                              {position.responsibilities?.length > 0 && (
                                 <div className="mb-3">
                                   <h5 className="font-medium text-sm mb-2">{t('experience.responsibilities')}</h5>
                                   <ul className="space-y-1">
@@ -130,7 +130,7 @@ const Experience: React.FC = () => {
                                 </div>
                               )}
 
-                              {position.achievements && position.achievements.length > 0 && (
+                              {position.achievements?.length > 0 && (
                                 <div className="mb-3">
                                   <h5 className="font-medium text-sm mb-2">{t('experience.achievements')}</h5>
                                   <ul className="space-y-1">

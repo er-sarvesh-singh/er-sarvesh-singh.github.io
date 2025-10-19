@@ -5,7 +5,7 @@
     {
       "id": "publicis-sapient",
       "company": "Publicis Sapient",
-      "logo": "/images/Sapient_logo.png",
+      "logo": "/images/logo/Sapient.png",
       "startDate": "2021-10-01",
       "endDate": null,
       "location": "Gurugram, Haryana, India",
@@ -39,7 +39,7 @@
     {
       "id": "daffodil",
       "company": "Daffodil Software",
-      "logo": "/images/Daffodil_logo.png",
+      "logo": "/images/logo/Daffodil.png",
       "startDate": "2018-05-01",
       "endDate": "2021-10-31",
       "location": "Gurugram, Haryana, India",
@@ -76,7 +76,7 @@
     {
       "id": "hasura",
       "company": "Hasura",
-      "logo": "/images/Hasura_logo.png",
+      "logo": "/images/logo/Hasura.png",
       "startDate": "2017-05-01",
       "endDate": "2017-07-30",
       "totalDuration": "3 mos",

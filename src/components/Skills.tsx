@@ -186,7 +186,7 @@ const Skills: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <div className="max-w-4xl mx-auto bg-background rounded-lg p-8 shadow-lg">
+            <div className="max-w-4xl mx-auto p-8">
               <h3 className="text-xl font-bold mb-6 text-center flex items-center justify-center gap-2">
                 <span className="text-2xl">🎯</span>
                 {t('skills.otherSkills')}

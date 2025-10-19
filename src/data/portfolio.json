@@ -35,6 +35,7 @@
     { "label": "Experience", "href": "#experience" },
     { "label": "Education", "href": "#education" },
     { "label": "Skills", "href": "#skills" },
+    { "label": "Recognition", "href": "#recognition" },
     { "label": "Projects", "href": "#projects" },
     { "label": "Contact", "href": "#contact" }
   ],
