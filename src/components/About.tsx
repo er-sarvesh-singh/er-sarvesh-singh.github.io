@@ -130,7 +130,7 @@ const About: React.FC = () => {
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {t(`about.${stat.label}`)}
+                    {t(`about.${stat.label}`.toLowerCase())}
                   </div>
                 </motion.div>
               ))}
